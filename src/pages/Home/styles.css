@@ -1,0 +1,33 @@
+/* styles.css */
+.home-container {
+    display: flex;           /* Utiliza flexbox para o layout */
+    flex-direction: column;  /* Alinha os itens verticalmente */
+    min-height: 100vh;       /* Garante que a página ocupe a altura total da tela */
+}
+
+.content {
+    flex: 1;                /* Faz o container de conteúdo ocupar o espaço restante */
+    display: flex;          /* Utiliza flexbox para o layout do conteúdo */
+    flex-direction: column; /* Alinha itens verticalmente */ 
+    padding: 20px;          /* Adiciona espaçamento interno */
+    align-items: flex-start;
+}
+
+
+.title {
+    font-size: 2rem;        /* Define o tamanho da fonte do título */
+    margin-bottom: 20px;    /* Adiciona espaço abaixo do título */
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.text-field {
+    width: 100%;            /* Faz o campo de texto ocupar toda a largura disponível */
+    max-width: 600px;       /* Define uma largura máxima para o campo de texto */
+    height: 200px;          /* Define a altura do campo de texto */
+    padding: 10px;         /* Adiciona espaçamento interno ao campo de texto */
+    font-size: 1rem;        /* Define o tamanho da fonte no campo de texto */
+    border: 1px solid #ccc; /* Adiciona uma borda ao campo de texto */
+    border-radius: 4px;     /* Adiciona bordas arredondadas ao campo de texto */
+    resize: none;           /* Impede que o usuário redimensione o campo de texto */
+}

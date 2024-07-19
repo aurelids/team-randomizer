@@ -1,0 +1,21 @@
+/* styles.css */
+.header {
+    display: flex;
+    background-color: #49a5da; /* Cor de fundo do cabeçalho */
+    color: white;              /* Cor do texto do cabeçalho */
+    padding: 10px;            /* Espaçamento interno do cabeçalho */
+    text-align: center;       /* Alinha o texto ao centro */
+    align-items: center;      /* Alinha verticalmente o conteúdo ao centro */
+}
+
+.header-logo {
+    width: 150px;   /* Define a largura da imagem */
+    height: auto;  /* Mantém a proporção da altura baseada na largura */
+    margin-right: 15px; /* Adiciona espaço entre a imagem e o texto */
+}
+
+.header-title {
+    font-size: 1.5rem; /* Ajusta o tamanho do texto do título */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    font-weight: 700;
+}
