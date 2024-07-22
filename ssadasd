@@ -1,0 +1,36 @@
+[33mcommit 632b3ad975a613993f8297b63695776472d4a022[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mv0[m[33m)[m
+Author: Gabriel Cogo <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 16:50:42 2024 -0300
+
+    Simulando erro no projeto
+
+[33mcommit 59b12e5b1fc66ed611462444002ff20283589926[m
+Author: Gabriel Cogo <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 16:48:27 2024 -0300
+
+    teste de comit
+
+[33mcommit 84d275cadeb1316c506f111fbef93c87b670c780[m[33m ([m[1;31morigin/v0[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: d041d19 fb5b4ed
+Author: Gabriel Cogo <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 16:41:26 2024 -0300
+
+    Primeiro commit do projeto
+
+[33mcommit d041d197348229178767b77ab19af9a0d8ccbe99[m
+Author: Gabriel Cogo <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 16:29:51 2024 -0300
+
+    Commit inicial
+
+[33mcommit fb5b4ed1f84efabdaa5e68423b83b0a7ad2a4fa7[m
+Author: aurelids <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 16:28:18 2024 -0300
+
+    Initial commit
+
+[33mcommit 2d16a63e0b6e43f3cb0185a86b92844ae0dea1de[m
+Author: Gabriel Cogo <gabrielaurelio33@gmail.com>
+Date:   Fri Jul 19 13:56:14 2024 -0300
+
+    Initialize project using Create React App
