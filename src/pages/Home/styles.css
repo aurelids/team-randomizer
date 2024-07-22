@@ -59,7 +59,7 @@
   .vertical-divider {
     width: 40px;
     background-color: #49a5da; 
-    margin-right: 64%;
+    margin-right: 10%;
     flex-shrink: 0;             /* Impede que a linha divisória encolha */
   }
   
@@ -70,7 +70,7 @@
   }
   
   .subtitle {
-    font-size: 1.2rem;          /* Define o tamanho da fonte do subtítulo */
+    font-size: 1.5rem;          /* Define o tamanho da fonte do subtítulo */
     margin-right: 10px;         /* Adiciona espaço à direita do subtítulo */
   }
   
@@ -81,4 +81,23 @@
     border: 1px solid #ccc;     /* Adiciona uma borda ao campo de número */
     border-radius: 4px;         /* Adiciona bordas arredondadas ao campo de número */
   }
+
+  .right-content {
+    flex: 2; /* O conteúdo à direita ocupa o dobro do espaço em relação ao conteúdo à esquerda */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Alinha os times horizontalmente no centro */
+    align-items: center; /* Alinha os times verticalmente no centro */
+    background-color: #f9f9f9; /* Adiciona uma cor de fundo para destaque */
+  }
   
+  .parse-button {
+    background-color: #49a5da;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+  }

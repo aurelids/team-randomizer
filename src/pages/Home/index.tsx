@@ -1,5 +1,6 @@
-import React, { useState } from 'react'; // Importa a biblioteca React e useState
-import './styles.css'; // Importa estilos específicos para a página inicial
+import React, { useState } from 'react';
+import './styles.css';
+import TeamSorter from '../../components/TeamSorter';
 
 // Define o componente Home
 const Home: React.FC = () => {
@@ -7,10 +8,10 @@ const Home: React.FC = () => {
   const [numPlayers, setNumPlayers] = useState(1); // Estado para controlar o número de jogadores por equipe
 
   return (
-    <div className="home-container"> {/* Container principal da página inicial */}
+    <div className="home-container">
       <div className="content">
         <div className="left-content">
-          <h1 className="title">Jogadores</h1> {/* Título acima do campo de texto */}
+          <h1 className="title">Jogadores</h1>
           <div className="input-container">
             <textarea
               className="text-field"
@@ -37,11 +38,15 @@ const Home: React.FC = () => {
               min="1"
             />
           </div>
+          <button className="parse-button" onClick={() => {/* no need to handle sorting here */}}>Sortear</button>
         </div>
-        <div className="vertical-divider"></div> {/* Linha divisória */}
+        <div className="vertical-divider"></div>
+        <div className="right-content">
+          <TeamSorter playersText={text} playersPerTeam={numPlayers} />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Home; // Exporta o componente Home para ser usado em App.tsx
+export default Home;
