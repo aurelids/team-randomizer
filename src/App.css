@@ -1,23 +1,22 @@
 /* Estilo global para o container principal */
 .App {
-  display: flex;               /* Utiliza flexbox para o layout */
-  flex-direction: column;      /* Alinha os itens verticalmente */
-  min-height: 100vh;           /* Garante que a página ocupe a altura total da tela */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .Main-content {
-  flex: 1;                     /* Faz o container de conteúdo ocupar o espaço restante */
-  padding: 20px;               /* Adiciona espaçamento interno */
-  overflow-y: auto;            /* Adiciona rolagem vertical se necessário */
-}
-
-/* Adicione este estilo para garantir que o rodapé fique na parte inferior */
-body {
+  flex: 1;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  overflow: auto;
 }
 
 html, body, #root {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }

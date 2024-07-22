@@ -1,63 +1,84 @@
-.home-container {
-    display: flex;           /* Utiliza flexbox para o layout */
-    flex-direction: column;  /* Alinha os itens verticalmente */
-    flex:1;       /* Garante que a página ocupe a altura total da tela */
-}
-
-.content {
-    flex: 1;                /* Faz o container de conteúdo ocupar o espaço restante */
-    display: flex;          /* Utiliza flexbox para o layout do conteúdo */
-    flex-direction: column; /* Alinha itens verticalmente */ 
-    padding: 20px;          /* Adiciona espaçamento interno */
+/* Estilo global para o container principal */
+.App {
+    display: flex;               /* Utiliza flexbox para o layout */
+    flex-direction: column;      /* Alinha os itens verticalmente */
+    min-height: 100vh;           /* Garante que a página ocupe a altura total da tela */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Main-content {
+    flex: 1;                     /* Faz o container de conteúdo ocupar o espaço restante */
+    display: flex;               /* Utiliza flexbox para o layout do conteúdo */
+  }
+  
+  .home-container {
+    display: flex;               /* Utiliza flexbox para o layout */
+    flex-direction: column;      /* Alinha os itens verticalmente */
+    flex: 1;                     /* Garante que a página ocupe a altura total da tela */
+  }
+  
+  .content {
+    display: flex;               /* Utiliza flexbox para o layout do conteúdo */
+    flex: 1;                     /* Faz o container de conteúdo ocupar o espaço restante */
+    align-items: stretch;        /* Alinha os itens para ocupar toda a altura disponível */
+  }
+  
+  .left-content {
+    flex: 1;                     /* Faz o conteúdo à esquerda ocupar o espaço disponível */
+    display: flex;               /* Utiliza flexbox para o layout do conteúdo */
+    flex-direction: column;      /* Alinha itens verticalmente */
+    padding: 20px;               /* Adiciona espaçamento interno */
     align-items: flex-start;
-}
-
-.input-container {
-    display: flex;          /* Utiliza flexbox para alinhar o campo de texto e a linha divisora verticalmente */
-    align-items: flex-start;
-    width: 100%;            /* Faz o container ocupar toda a largura disponível */
-}
-
-.title {
-    font-size: 2rem;        /* Define o tamanho da fonte do título */
-    margin-bottom: 20px;    /* Adiciona espaço abaixo do título */
+  }
+  
+  .title {
+    font-size: 2rem;            /* Define o tamanho da fonte do título */
+    margin-bottom: 20px;        /* Adiciona espaço abaixo do título */
     text-transform: uppercase;
     text-align: center;
-}
-
-.text-field {
-    width: 100%;            /* Faz o campo de texto ocupar toda a largura disponível */
-    max-width: 600px;       /* Define uma largura máxima para o campo de texto */
-    height: 200px;          /* Define a altura do campo de texto */
-    padding: 10px;         /* Adiciona espaçamento interno ao campo de texto */
-    font-size: 1rem;        /* Define o tamanho da fonte no campo de texto */
-    border: 1px solid #ccc; /* Adiciona uma borda ao campo de texto */
-    border-radius: 4px;     /* Adiciona bordas arredondadas ao campo de texto */
-    resize: none;           /* Impede que o usuário redimensione o campo de texto */
-}
-
-.vertical-divider {
-    width: 4px;             /* Define a largura da linha divisora */
-    height: 200px;          /* Define a altura da linha divisora (deve corresponder à altura do campo de texto) */
-    background-color: #ccc; /* Define a cor da linha divisora */
-    margin-left: 20px;      /* Adiciona espaço à esquerda da linha divisora */
-}
-
-.subtitles-container {
-    display: flex;          /* Utiliza flexbox para alinhar o subtítulo e o campo de número */
-    align-items: center;    /* Alinha verticalmente o subtítulo e o campo de número */
-    margin-top: 20px;       /* Adiciona espaço acima do container do subtítulo */
-}
-
-.subtitle {
-    font-size: 1.2rem;      /* Define o tamanho da fonte do subtítulo */
-    margin-right: 10px;     /* Adiciona espaço à direita do subtítulo */
-}
-
-.number-input {
-    width: 80px;            /* Define a largura do campo de número */
-    padding: 5px;           /* Adiciona espaçamento interno ao campo de número */
-    font-size: 1rem;        /* Define o tamanho da fonte no campo de número */
-    border: 1px solid #ccc; /* Adiciona uma borda ao campo de número */
-    border-radius: 4px;     /* Adiciona bordas arredondadas ao campo de número */
-}
+  }
+  
+  .input-container {
+    display: flex;              /* Utiliza flexbox para alinhar o campo de texto e a linha divisora verticalmente */
+    align-items: flex-start;
+    width: 100%;                /* Faz o container ocupar toda a largura disponível */
+  }
+  
+  .text-field {
+    width: 100%;                /* Faz o campo de texto ocupar toda a largura disponível */
+    max-width: 600px;           /* Define uma largura máxima para o campo de texto */
+    height: 200px;              /* Define a altura do campo de texto */
+    padding: 10px;              /* Adiciona espaçamento interno ao campo de texto */
+    font-size: 1rem;            /* Define o tamanho da fonte no campo de texto */
+    border: 1px solid #ccc;     /* Adiciona uma borda ao campo de texto */
+    border-radius: 4px;         /* Adiciona bordas arredondadas ao campo de texto */
+    resize: none;               /* Impede que o usuário redimensione o campo de texto */
+  }
+  
+  .vertical-divider {
+    width: 40px;
+    background-color: #49a5da; 
+    margin-right: 64%;
+    flex-shrink: 0;             /* Impede que a linha divisória encolha */
+  }
+  
+  .subtitles-container {
+    display: flex;              /* Utiliza flexbox para alinhar o subtítulo e o campo de número */
+    align-items: center;        /* Alinha verticalmente o subtítulo e o campo de número */
+    margin-top: 20px;           /* Adiciona espaço acima do container do subtítulo */
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;          /* Define o tamanho da fonte do subtítulo */
+    margin-right: 10px;         /* Adiciona espaço à direita do subtítulo */
+  }
+  
+  .number-input {
+    width: 80px;                /* Define a largura do campo de número */
+    padding: 5px;               /* Adiciona espaçamento interno ao campo de número */
+    font-size: 1rem;            /* Define o tamanho da fonte no campo de número */
+    border: 1px solid #ccc;     /* Adiciona uma borda ao campo de número */
+    border-radius: 4px;         /* Adiciona bordas arredondadas ao campo de número */
+  }
+  
