@@ -2,10 +2,45 @@ import React, { useState } from 'react';
 import './styles.css';
 import TeamSorter from '../../components/TeamSorter';
 
-// Define o componente Home
+interface Player {
+  name: string;
+  level: number;
+}
+
+const shuffleArray = <T,>(array: T[]): T[] => {
+  let currentIndex = array.length, randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+};
+
 const Home: React.FC = () => {
   const [text, setText] = useState(''); // Estado para controlar o texto do campo
   const [numPlayers, setNumPlayers] = useState(1); // Estado para controlar o número de jogadores por equipe
+  const [players, setPlayers] = useState<Player[]>([]); // Estado para armazenar a lista de jogadores
+
+  const handleSort = () => {
+    const newPlayers = text.split('\n').map(line => {
+      const [name, level] = line.split('[');
+      if (name && level) {
+        const levelNumber = parseInt(level.replace(']', '').trim(), 10);
+        return {
+          name: name.trim(),
+          level: !isNaN(levelNumber) ? levelNumber : 0
+        };
+      }
+      return null;
+    }).filter(player => player !== null) as Player[];
+
+    // Embaralha a lista de jogadores
+    const shuffledPlayers = shuffleArray(newPlayers);
+    setPlayers(shuffledPlayers);
+  };
 
   return (
     <div className="home-container">
@@ -38,11 +73,11 @@ const Home: React.FC = () => {
               min="1"
             />
           </div>
-          <button className="parse-button" onClick={() => {/* no need to handle sorting here */}}>Sortear</button>
+          <button className="parse-button" onClick={handleSort}>Sortear</button>
         </div>
         <div className="vertical-divider"></div>
         <div className="right-content">
-          <TeamSorter playersText={text} playersPerTeam={numPlayers} />
+          <TeamSorter players={players} playersPerTeam={numPlayers} />
         </div>
       </div>
     </div>
