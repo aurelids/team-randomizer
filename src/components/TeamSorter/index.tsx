@@ -9,17 +9,32 @@ interface Player {
 interface Team {
   players: Player[];
   totalLevel: number;
+  isReserve?: boolean;
 }
 
 const sortPlayersIntoTeams = (players: Player[], playersPerTeam: number): Team[] => {
-  const numTeams = Math.ceil(players.length / playersPerTeam);
-  const teams: Team[] = Array.from({ length: numTeams }, () => ({ players: [], totalLevel: 0 }));
+  const teams: Team[] = [];
+  let currentTeam: Player[] = [];
+  let totalLevel = 0;
 
   players.forEach((player, index) => {
-    const teamIndex = index % numTeams;
-    teams[teamIndex].players.push(player);
-    teams[teamIndex].totalLevel += player.level;
+    currentTeam.push(player);
+    totalLevel += player.level;
+
+    if (currentTeam.length === playersPerTeam || index === players.length - 1) {
+      teams.push({ players: currentTeam, totalLevel });
+      currentTeam = [];
+      totalLevel = 0;
+    }
   });
+
+  // If the last team is not complete, it becomes the reserve team
+  if (teams[teams.length - 1].players.length < playersPerTeam) {
+    const reserveTeam = teams.pop();
+    if (reserveTeam) {
+      teams.push({ ...reserveTeam, isReserve: true });
+    }
+  }
 
   return teams;
 };
@@ -37,7 +52,7 @@ const TeamSorter: React.FC<{ players: Player[]; playersPerTeam: number }> = ({ p
       <div className="teams-container">
         {teams.map((team, index) => (
           <div key={index} className="team">
-            <h2>Time {index + 1}</h2>
+            <h2>{team.isReserve ? 'Time reserva' : `Time ${index + 1}`}</h2>
             <table>
               <tbody>
                 {team.players.map((player, idx) => (
