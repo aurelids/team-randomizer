@@ -24,12 +24,10 @@
     align-items: stretch;        /* Alinha os itens para ocupar toda a altura disponível */
   }
   
-  .left-content {
-    flex: 1;                     /* Faz o conteúdo à esquerda ocupar o espaço disponível */
+  .left-content {                  /* Faz o conteúdo à esquerda ocupar o espaço disponível */
     display: flex;               /* Utiliza flexbox para o layout do conteúdo */
     flex-direction: column;      /* Alinha itens verticalmente */
     padding: 20px;               /* Adiciona espaçamento interno */
-    align-items: flex-start;
   }
   
   .title {
@@ -83,13 +81,14 @@
   }
 
   .right-content {
-    flex: 2; /* O conteúdo à direita ocupa o dobro do espaço em relação ao conteúdo à esquerda */
-    padding: 20px;
+    flex: 1;
     display: flex;
-    justify-content: center; /* Alinha os times horizontalmente no centro */
-    align-items: center; /* Alinha os times verticalmente no centro */
-    background-color: #f9f9f9; /* Adiciona uma cor de fundo para destaque */
-  }
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 4%;
+    max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura disponível */
+}
   
   .parse-button {
     background-color: #49a5da;
@@ -97,7 +96,7 @@
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 2rem;
     cursor: pointer;
     margin-top: 20px;
   }

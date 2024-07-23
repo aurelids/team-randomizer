@@ -46,6 +46,10 @@ const TeamSorter: React.FC<{ players: Player[]; playersPerTeam: number }> = ({ p
                     <td>{player.level}</td>
                   </tr>
                 ))}
+                <tr className="team-total-row">
+                  <td><b>Nível do time:</b></td>
+                  <td><b>{team.totalLevel}</b></td>
+                </tr>
               </tbody>
             </table>
           </div>

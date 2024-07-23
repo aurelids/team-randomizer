@@ -5,7 +5,7 @@ import './styles.css';    // Importa os estilos específicos para o Footer
 const Footer: React.FC = () => {
   return (
     <footer className="footer">
-      <p>&copy; 2024 Team Randomizer. All rights reserved.</p> {/* Texto do rodapé */}
+      <p>&copy; Feito por Gabriel Aurélio Cogo.</p> {/* Texto do rodapé */}
     </footer>
   );
 };

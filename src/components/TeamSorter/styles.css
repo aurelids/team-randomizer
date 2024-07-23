@@ -1,43 +1,49 @@
 .team-sorter {
-    padding: 20px;
-    background-color: #fff; /* Adiciona uma cor de fundo branca */
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
-  }
-  
-  .teams-container {
-    display: flex; /* Alinha os times em linha */
-    flex-wrap: wrap; /* Permite que os times quebrem para a linha seguinte quando não houver espaço */
-    gap: 20px; /* Espaçamento entre os times */
-    justify-content: center; /* Alinha os times horizontalmente no centro */
-  }
-  
-  .team {
-    flex: 1 1 200px; /* Cada time ocupará no mínimo 200px e crescerá conforme necessário */
-    min-width: 200px; /* Define a largura mínima para cada time */
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .team h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-    border: 1px solid #ddd;
-  }
-  
-  th, td {
-    padding: 8px;
-    text-align: left;
-  }
-  
+  padding: 20px;
+  background-color: #fff; /* Adiciona uma cor de fundo branca */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destaque */
+}
+
+.teams-container {
+  display: flex; /* Alinha os times em linha */
+  flex-wrap: wrap; /* Permite que os times quebrem para a linha seguinte quando não houver espaço */
+  gap: 25px; /* Espaçamento entre os times */
+  justify-content: center; /* Alinha os times horizontalmente no centro */
+}
+
+.team { /* Cada time ocupará no mínimo 200px e crescerá conforme necessário */
+  min-width: 200px; /* Define a largura mínima para cada time */
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.team h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 2px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+.team-total-row {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+}
+
+.team-total-row td {
+  font-weight: bold; /* Texto em negrito */
+}
