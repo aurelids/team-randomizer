@@ -68,8 +68,10 @@
   }
   
   .subtitle {
-    font-size: 1.5rem;          /* Define o tamanho da fonte do subtítulo */
+    font-size: 1.2rem;          /* Define o tamanho da fonte do subtítulo */
     margin-right: 10px;         /* Adiciona espaço à direita do subtítulo */
+    font-weight: 600;
+    text-transform: uppercase;
   }
   
   .number-input {

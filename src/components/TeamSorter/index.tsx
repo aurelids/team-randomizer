@@ -12,38 +12,62 @@ interface Team {
   isReserve?: boolean;
 }
 
-const sortPlayersIntoTeams = (players: Player[], playersPerTeam: number): Team[] => {
-  const teams: Team[] = [];
-  let currentTeam: Player[] = [];
-  let totalLevel = 0;
+const shuffleArray = <T,>(array: T[]): T[] => {
+  let currentIndex = array.length, randomIndex;
 
-  players.forEach((player, index) => {
-    currentTeam.push(player);
-    totalLevel += player.level;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+  }
 
-    if (currentTeam.length === playersPerTeam || index === players.length - 1) {
-      teams.push({ players: currentTeam, totalLevel });
-      currentTeam = [];
-      totalLevel = 0;
+  return array;
+};
+
+const balanceTeamsByLevel = (players: Player[], playersPerTeam: number): Team[] => {
+  if (players.length === 0 || playersPerTeam <= 0) return [];
+
+  // Shuffle players to ensure randomness
+  const shuffledPlayers = shuffleArray([...players]);
+
+  const numTeams = Math.floor(shuffledPlayers.length / playersPerTeam);
+  const teams: Team[] = Array.from({ length: numTeams }, () => ({ players: [], totalLevel: 0 }));
+  const reserveTeam: Team = { players: [], totalLevel: 0, isReserve: true };
+
+  // Sort players by level in descending order
+  const sortedPlayers = [...shuffledPlayers].sort((a, b) => b.level - a.level);
+
+  // Shuffle sorted players to add randomness
+  const randomizedPlayers = shuffleArray(sortedPlayers);
+
+  // Distribute players to teams with added randomness
+  randomizedPlayers.forEach((player) => {
+    // Randomly choose a team for the player, or add to reserve team
+    const eligibleTeams = teams.filter(team => team.players.length < playersPerTeam);
+    if (eligibleTeams.length > 0) {
+      const randomTeam = shuffleArray(eligibleTeams)[0];
+      randomTeam.players.push(player);
+      randomTeam.totalLevel += player.level;
+    } else {
+      reserveTeam.players.push(player);
+      reserveTeam.totalLevel += player.level;
     }
   });
 
-  // If the last team is not complete, it becomes the reserve team
-  if (teams[teams.length - 1].players.length < playersPerTeam) {
-    const reserveTeam = teams.pop();
-    if (reserveTeam) {
-      teams.push({ ...reserveTeam, isReserve: true });
-    }
+  // Add reserve team if it has players
+  if (reserveTeam.players.length > 0) {
+    teams.push(reserveTeam);
   }
 
   return teams;
 };
 
+
 const TeamSorter: React.FC<{ players: Player[]; playersPerTeam: number }> = ({ players, playersPerTeam }) => {
   const [teams, setTeams] = useState<Team[]>([]);
 
   useEffect(() => {
-    const sortedTeams = sortPlayersIntoTeams(players, playersPerTeam);
+    const sortedTeams = balanceTeamsByLevel(players, playersPerTeam);
     setTeams(sortedTeams);
   }, [players, playersPerTeam]);
 
